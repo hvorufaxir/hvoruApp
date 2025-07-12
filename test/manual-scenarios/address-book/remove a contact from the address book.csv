@@ -1,0 +1,44 @@
+const testCases = [
+  {
+    step: "Open the extension.",
+    expectedResult: "The Welcome Back screen is shown."
+  },
+  {
+    step: "Proceed to Unlock the wallet.",
+    preconditions: "password (8 characters min)",
+    expectedResult:
+      "The Ether balance is shown on the overview.\n" +
+      "The wallet address is shown on the overview.\n" +
+      "The selected network is Ethereum Mainnet."
+  },
+  {
+    step: "Select Expand view in the wallet menu.",
+    expectedResult:
+      "A new tab opens.\n" +
+      "The expanded extension view is shown."
+  },
+  {
+    step: "Proceed to open the Accounts options menu.",
+    expectedResult: ["The accounts menu popover is shown."]
+  },
+  {
+    step: ["Proceed to Contacts in the Settings menu.",],
+    expectedResult:
+        ["The contact list is displayed."]
+   }
+];
+
+// Functionality for testing cases
+function executeTestCase(testCase) {
+ const {step, preconditions, testData, expectedResult} = testCase;
+ if(preconditions) console.log(preconditions);
+ if(testData) console.log(testData);
+ console.assert(
+     // Your assertion logic here using your existing UI or web3 library functions
+ );
+}
+
+testCases.forEach((testCase, index) => executeTestCase(testCase));
+```
+
+This code defines an array of test cases and a function `executeTestCase` that takes each case and logs its details. The actual assertion logic needs to be implemented within `console.assert`.
